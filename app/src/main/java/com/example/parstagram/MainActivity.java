@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Button bttn_takePic;
     Button bttn_submit;
     ImageView ivPreview;
+    private ImageView iv_logout;
     private File photoFile;
     public String photoFileName = "photo.jpg";
 
@@ -50,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
         bttn_submit = findViewById(R.id.bttn_submitPic);
         bttn_takePic = findViewById(R.id.bttn_takePic);
         ivPreview = (ImageView) findViewById(R.id.iv_photoCapture);
+        iv_logout = findViewById(R.id.iv_logout);
+
+        iv_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handle_logout();
+            }
+        });
         
        // queryPost();
 
@@ -182,5 +191,16 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public void handle_logout() {
+        Log.i(TAG,"Logining user out....");
+        ParseUser.logOut();
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser==null)
+        {
+            Log.i(TAG,"Successfully logged out. Exit activity....");
+        }
+        finish();
     }
 }

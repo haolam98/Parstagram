@@ -2,14 +2,12 @@ package com.example.parstagram;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -21,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String TAG = "LoginActivity";
     private EditText tv_username;
     private EditText tv_password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,5 +68,14 @@ public class LoginActivity extends AppCompatActivity {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         finish(); //remove activity from the back stack
+    }
+
+
+    public void handle_signmeup(View view) {
+        Log.i(TAG, "Start SignUpActivity!");
+        Intent i = new Intent(this, SignUpActivity.class);
+        startActivity(i);
+        finish(); //remove activity from the back stack
+
     }
 }
