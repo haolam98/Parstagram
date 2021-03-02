@@ -30,7 +30,7 @@ Here's a walkthrough of implemented user stories:
 
 <img src='https://github.com/haolam98/Parstagram/blob/master/test_run.gif'/>
 
-GIF created with [GIPHY](https://giphy.com/).
+GIF created with [GIPHY](https://giphy.com/) and [VEED](https://www.veed.io/).  
 
 ## Notes
 
