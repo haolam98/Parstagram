@@ -187,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
                 // Load the taken image into a preview
                 ImageView ivPreview = (ImageView) findViewById(R.id.iv_photoCapture);
                 ivPreview.setImageBitmap(takenImage);
+                Toast.makeText(this, "Picture was taken!", Toast.LENGTH_SHORT).show();
             } else { // Result was a failure
                 Toast.makeText(this, "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
             }
